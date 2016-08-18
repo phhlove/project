@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	    http://www.springframework.org/schema/cache
+        http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+    <cache:annotation-driven cache-manager="cacheManager"/>
+
+    <bean id="memcachedClient" class="net.spy.memcached.spring.MemcachedClientFactoryBean">
+        <property name="servers" value="${memcached.server}"/>
+        <property name="protocol" value="BINARY"/>
+        <property name="transcoder">
+            <bean class="net.spy.memcached.transcoders.SerializingTranscoder">
+                <property name="compressionThreshold" value="1024"/>
+            </bean>
+        </property>
+        <property name="opTimeout" value="1000"/>
+        <property name="timeoutExceptionThreshold" value="1998"/>
+        <property name="locatorType" value="CONSISTENT"/>
+        <property name="failureMode" value="Redistribute"/>
+        <property name="useNagleAlgorithm" value="false"/>
+    </bean>
+
+    <bean id="cacheManager" class="com.jredrain.session.MemcacheCacheManager">
+        <property name="client" ref="memcachedClient"/>
+        <property name="caches">
+            <set>
+                <bean class="com.jredrain.session.MemcacheCache">
+                    <property name="client" ref="memcachedClient"/>
+                    <property name="name" value="redrain"/>
+                </bean>
+            </set>
+        </property>
+    </bean>
+
+    <bean id="memcacheCache" class="com.jredrain.session.MemcacheCache">
+        <property name="client" ref="memcachedClient"/>
+        <property name="name" value="REDRAIN"/>
+    </bean>
+
+</beans>

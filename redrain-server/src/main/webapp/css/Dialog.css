@@ -1,0 +1,133 @@
+@charset "utf-8";
+/* CSS Document */
+
+article, aside, details, figcaption, figure, footer, header, main, nav, section {
+    display: block;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+table {
+    border-collapse: inherit;
+}
+
+.blackWrap {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0) \9 \0;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#BB000000, endColorstr=#BB000000);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#BB000000, endColorstr=#BB000000) \9;
+    *filter: progid: DXImageTransform . Microsoft . gradient(startColorstr = #BB000000, endColorstr = #BB000000);
+    _filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#BB000000, endColorstr=#BB000000);
+    z-index: 999;
+}
+
+.dialog-wrap {
+    width: 760px;
+    height: 430px;
+    overflow: inherit;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -380px;
+    margin-top: -215px;
+}
+
+.btn-close {
+    width: 28px;
+    height: 28px;
+    background: url(/img/btn_close.png) no-repeat;
+    position: absolute;
+    right: -5px;
+    top: -7px;
+    cursor: pointer;
+}
+
+.dialog-center .line-b {
+    border: none;
+}
+
+.dialog-center table {
+    border: 0 !important;
+}
+
+.dialog-center table tr:hover {
+    background: none;
+}
+
+.dialog-center {
+    padding-left: 30px;
+    clear: both;
+    width: 715px;
+    height: 188px;
+    clear: both;
+}
+
+.dialog-describe .spill {
+    border-top: 1px solid #eaeaea;
+    padding-top: 15px;
+}
+
+.dialog-next-wrap {
+    padding: 0 30px;
+}
+
+.dialog-next {
+    height: 39px;
+    border-top: 1px solid #eaeaea;
+    margin-top: 10px;
+    text-align: center;
+    padding-top: 19px;
+}
+
+.dialog-next input {
+    margin: 0 5px;
+}
+
+.dialog-next a {
+    padding: 2px 30px;
+    background: #3296e6;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    display: inline-block;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.dialog-next a:hover {
+    background: #359ef2;
+}
+
+.dialog-next .dialog-next-cancel {
+    background: #999;
+    border: 1px solid #999;
+}
+
+.dialog-next .dialog-next-cancel:hover {
+    background: #8b8a8a;
+}
+
+.dialog-explain-txt {
+    height: 33px;
+    font-size: 12px;
+    line-height: 43px;
+    padding-left: 20px;
+    margin: 20px 0 40px 0;
+}
+
+.binding-alink {
+    float: right;
+}
+
+.binding-fogret-password {
+    margin-left: 50px;
+}
